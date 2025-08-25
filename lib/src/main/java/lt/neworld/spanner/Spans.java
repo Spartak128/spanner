@@ -56,6 +56,7 @@ import lt.neworld.spanner.Span;
 import lt.neworld.spanner.SpanBuilder;
 import lt.neworld.spanner.StyleSpanBuilder;
 import lt.neworld.spanner.LineBackgroundSpanBuilder;
+import lt.neworld.spanner.FuriganaSpanBuilder;
 
 public class Spans {
     private Spans() {
@@ -162,6 +163,20 @@ public class Spans {
                 return new UnderlineSpan();
             }
         });
+    }
+
+    /**
+     * Creates a span that draws provided reading (furigana) above the base text.
+     */
+    public static Span furigana(@NonNull final String reading) {
+        return new Span(new FuriganaSpanBuilder(reading));
+    }
+
+    /**
+     * Creates a span that draws provided reading (furigana) above the base text using given relative size.
+     */
+    public static Span furigana(@NonNull final String reading, @FloatRange(from = 0.0) final float relativeSize) {
+        return new Span(new FuriganaSpanBuilder(reading, relativeSize));
     }
 
     /**
