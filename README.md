@@ -73,6 +73,15 @@ val spannable = Spanner("The quick brown fox jumps over the lazy dog")
         .span("fox", custom { StyleSpan(Typeface.ITALIC) })
 ```
 
+#### Furigana / Ruby
+
+```java
+Spannable spannable = new Spanner()
+        .span("漢字", furigana("かんじ"));
+```
+
+This renders the base text `漢字` with the reading `かんじ` displayed above in a smaller size.
+
 #### Reference
 
 Spans:
@@ -115,6 +124,10 @@ Text manipulation:
         implementation 'lt.neworld:spanner:1.1.0'
     }
 ```
+
+#### Android API compatibility
+
+This library requires a minimum Android API level of 14 (Ice Cream Sandwich). Versions prior to API 14 are not supported.
 
 #### License
 
