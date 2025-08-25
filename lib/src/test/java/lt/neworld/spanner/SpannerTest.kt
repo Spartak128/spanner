@@ -138,6 +138,13 @@ class SpannerTest {
         )
     }
 
+    @Test
+    fun replace_emptySearch() {
+        val spanner = Spanner("foo")
+        spanner.replace("", "bar")
+        assertEquals("foo", spanner.toString())
+    }
+
     fun assertSpans(expected: String, actual: Spanner) {
         assertEquals(expected, actual.debugSpans())
     }
