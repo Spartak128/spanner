@@ -71,6 +71,7 @@ public class SampleJavaActivity extends AppCompatActivity {
                 .append("underline\n", underline())
                 .append("background\n", background(Color.YELLOW))
                 .append("foreground\n", foreground(Color.RED))
+                .append("漢字", Spans.furigana("かんじ")).append("\n")
                 .append("subscript\n", subscript())
                 .append("superscript\n", superscript())
                 .append("Image with custom bounds: ").append(image(drawable)).append("\n")
