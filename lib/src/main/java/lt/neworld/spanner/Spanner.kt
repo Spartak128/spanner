@@ -107,6 +107,8 @@ class Spanner(text: CharSequence?) : SpannableStringBuilder(text) {
     }
 
     fun replace(search: CharSequence, replace: CharSequence, vararg spans: Span): Spanner {
+        if (TextUtils.isEmpty(search)) return this
+
         var start: Int
 
         while (true) {
